@@ -1,6 +1,10 @@
 /* ============================================
-   Палитра: #d8e2dc #ffe5d9 #ffcad4 #f4acb7 #9d8189
-   Стиль: редакционный, «бумажный», с лёгкой неровностью
+   Палитра:
+   #423E37 — угольный (текст, подвал)
+   #E3B23C — горчичный (акцент)
+   #EDEBD7 — кремовый (фон)
+   #A39594 — серо-бежевый (вторичный текст)
+   #6E675F — тёплый серый (границы, подзаголовки)
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
@@ -12,16 +16,13 @@
 }
 
 :root {
-    --mint: #d8e2dc;
-    --peach: #ffe5d9;
-    --pink-light: #ffcad4;
-    --pink: #f4acb7;
-    --mauve: #9d8189;
-    --mauve-dark: #7d656d;
-    --mauve-deep: #4a3b42;
-    --ink: #2e2529;
-    --bg: #faf4f0;
-    --paper: #fffaf7;
+    --ink: #423E37;          /* основной тёмный */
+    --gold: #E3B23C;         /* акцент */
+    --gold-dark: #C99A2E;    /* акцент при наведении */
+    --paper: #EDEBD7;        /* основной фон / карточки */
+    --paper-light: #F6F4E8;  /* чуть светлее карточек */
+    --muted: #A39594;        /* вторичный текст */
+    --muted-dark: #6E675F;   /* границы, подзаголовки */
 }
 
 html {
@@ -29,11 +30,11 @@ html {
 }
 
 body {
-    background: var(--bg);
-    /* лёгкая «бумажная» текстура через точечный паттерн */
+    background-color: var(--paper);
+    /* лёгкая «бумажная» текстура */
     background-image:
-        radial-gradient(rgba(157, 129, 137, 0.06) 1px, transparent 1px),
-        radial-gradient(rgba(157, 129, 137, 0.04) 1px, transparent 1px);
+        radial-gradient(rgba(110, 103, 95, 0.06) 1px, transparent 1px),
+        radial-gradient(rgba(110, 103, 95, 0.04) 1px, transparent 1px);
     background-size: 28px 28px, 14px 14px;
     background-position: 0 0, 7px 7px;
     color: var(--ink);
@@ -49,25 +50,25 @@ h1, h2, h3, h4 {
     font-family: 'Lora', Georgia, serif;
     font-weight: 700;
     line-height: 1.25;
-    color: var(--mauve-deep);
+    color: var(--ink);
     letter-spacing: -0.01em;
 }
 
 a {
-    color: var(--mauve-dark);
+    color: var(--muted-dark);
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
 }
 
 /* ---------- ШАПКА ---------- */
 header {
-    background: rgba(255, 250, 247, 0.92);
+    background: rgba(237, 235, 215, 0.95);
     backdrop-filter: blur(6px);
     padding: 1.1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(157, 129, 137, 0.25);
+    border-bottom: 1px solid rgba(110, 103, 95, 0.25);
 }
 
 .header-container {
@@ -93,18 +94,18 @@ header {
 }
 
 .logo span {
-    color: var(--mauve);
+    color: var(--muted-dark);
     font-style: italic;
     font-weight: 600;
 }
 
-/* вместо эмодзи — маленькая точка-акцент */
+/* точка-акцент */
 .logo::before {
     content: '';
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--pink);
+    background: var(--gold);
     display: inline-block;
     transform: translateY(-2px);
 }
@@ -120,7 +121,7 @@ nav a {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--mauve-dark);
+    color: var(--muted-dark);
     padding: 4px 0;
     position: relative;
     transition: color 0.2s;
@@ -133,7 +134,7 @@ nav a::after {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: var(--pink);
+    background: var(--gold);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
@@ -160,7 +161,7 @@ nav a.active::after { transform: scaleX(1); }
     font-size: 0.92rem;
     font-weight: 600;
     padding: 0.55rem 1.25rem;
-    border-radius: 6px;              /* было 40px — теперь строже */
+    border-radius: 4px;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
     display: inline-flex;
@@ -174,34 +175,34 @@ nav a.active::after { transform: scaleX(1); }
 .btn:active { transform: translateY(1px); }
 
 .btn-outline {
-    border-color: var(--mauve);
-    color: var(--mauve-dark);
+    border-color: var(--muted-dark);
+    color: var(--ink);
     background: transparent;
 }
 .btn-outline:hover {
-    background: var(--mint);
-    border-color: var(--mauve-dark);
+    background: var(--gold);
+    border-color: var(--gold);
     color: var(--ink);
 }
 
 .btn-primary {
-    background: var(--pink);
+    background: var(--gold);
     color: var(--ink);
-    border-color: var(--pink);
+    border-color: var(--gold);
 }
 .btn-primary:hover {
-    background: var(--pink-light);
-    border-color: var(--pink-light);
+    background: var(--gold-dark);
+    border-color: var(--gold-dark);
 }
 
 .btn-secondary {
-    background: var(--mauve);
+    background: var(--ink);
     color: var(--paper);
-    border-color: var(--mauve);
+    border-color: var(--ink);
 }
 .btn-secondary:hover {
-    background: var(--mauve-dark);
-    border-color: var(--mauve-dark);
+    background: #2e2b26;
+    border-color: #2e2b26;
 }
 
 /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
@@ -213,15 +214,14 @@ main {
     width: 100%;
 }
 
-/* Хлебные крошки — мелкие, неброские */
 .breadcrumbs {
     font-size: 0.82rem;
-    color: var(--mauve);
+    color: var(--muted);
     margin-bottom: 2rem;
     letter-spacing: 0.02em;
 }
 .breadcrumbs a {
-    color: var(--mauve);
+    color: var(--muted-dark);
     text-decoration: none;
 }
 .breadcrumbs a:hover {
@@ -229,14 +229,13 @@ main {
     text-decoration: underline;
 }
 
-/* Заголовки страниц */
 .page-title {
     font-size: 2.6rem;
     margin-bottom: 0.8rem;
 }
 .page-subtitle {
     font-size: 1.08rem;
-    color: var(--mauve-dark);
+    color: var(--muted-dark);
     margin-bottom: 3rem;
     max-width: 620px;
 }
@@ -248,13 +247,12 @@ main {
     padding-left: 0;
 }
 
-/* тонкая линия под заголовком вместо жирной полосы */
 .section-title::after {
     content: '';
     display: block;
     width: 48px;
-    height: 1.5px;
-    background: var(--pink);
+    height: 2px;
+    background: var(--gold);
     margin-top: 10px;
 }
 
@@ -273,17 +271,16 @@ main {
     margin-bottom: 1.2rem;
 }
 
-/* акцент в заголовке — не «плашка», а подчёркивание маркером */
 .hero-text h1 em {
     font-style: italic;
-    color: var(--mauve-dark);
-    background: linear-gradient(transparent 62%, var(--pink-light) 62%);
+    color: var(--ink);
+    background: linear-gradient(transparent 62%, var(--gold) 62%);
     padding: 0 2px;
 }
 
 .hero-text p {
     font-size: 1.08rem;
-    color: var(--mauve-dark);
+    color: var(--muted-dark);
     margin-bottom: 2rem;
     max-width: 480px;
 }
@@ -294,28 +291,25 @@ main {
     gap: 0.8rem;
 }
 
-/* вместо «карточки с эмодзи» — фото-заглушка с наклоном */
+/* Контейнер для картинки */
 .hero-image {
-    aspect-ratio: 1 / 1;          /* квадратная картинка */
-    background: var(--paper);     /* белый/бумажный фон под картинкой */
-    border: 1px solid rgba(157, 129, 137, 0.3);
+    aspect-ratio: 1 / 1;
+    background: var(--paper-light);
+    border: 1px solid rgba(110, 103, 95, 0.25);
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotate(1.2deg);    /* сохраняем лёгкий наклон */
-    box-shadow: 6px 8px 0 rgba(157, 129, 137, 0.12);
-    overflow: hidden;             /* обрезаем, если картинка больше */
+    transform: rotate(1.2deg);
+    box-shadow: 6px 8px 0 rgba(110, 103, 95, 0.15);
+    overflow: hidden;
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;          /* картинка не обрезается, вписывается целиком */
+    object-fit: contain;
     display: block;
-}
-.hero-image span {
-    max-width: 180px;
 }
 
 /* ---------- КУРСЫ ---------- */
@@ -327,8 +321,8 @@ main {
 }
 
 .course-card {
-    background: var(--paper);
-    border: 1px solid rgba(157, 129, 137, 0.25);
+    background: var(--paper-light);
+    border: 1px solid rgba(110, 103, 95, 0.25);
     padding: 1.6rem 1.5rem 1.4rem;
     display: flex;
     flex-direction: column;
@@ -336,7 +330,7 @@ main {
 }
 
 .course-card:hover {
-    border-color: var(--mauve);
+    border-color: var(--gold);
     transform: translateY(-2px);
 }
 
@@ -352,7 +346,7 @@ main {
 }
 
 .course-card p {
-    color: var(--mauve-dark);
+    color: var(--muted-dark);
     font-size: 0.93rem;
     margin-bottom: 1.5rem;
     flex: 1;
@@ -373,8 +367,8 @@ main {
 }
 
 .teacher-card {
-    background: var(--paper);
-    border: 1px solid rgba(157, 129, 137, 0.25);
+    background: var(--paper-light);
+    border: 1px solid rgba(110, 103, 95, 0.25);
     padding: 1.8rem 1.4rem;
     text-align: left;
 }
@@ -383,13 +377,14 @@ main {
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background: var(--mint);
+    background: var(--muted);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    border: 1px solid rgba(157, 129, 137, 0.3);
+    border: 1px solid rgba(110, 103, 95, 0.35);
+    color: var(--paper);
 }
 
 .teacher-card h4 {
@@ -398,16 +393,16 @@ main {
 }
 
 .teacher-card p {
-    color: var(--mauve);
+    color: var(--muted-dark);
     font-size: 0.88rem;
 }
 
-/* развёрнутая карточка преподавателя */
+/* развёрнутая карточка */
 .teacher-full {
     display: flex;
     gap: 1.8rem;
-    background: var(--paper);
-    border: 1px solid rgba(157, 129, 137, 0.25);
+    background: var(--paper-light);
+    border: 1px solid rgba(110, 103, 95, 0.25);
     padding: 1.8rem;
     margin-bottom: 1.5rem;
     align-items: flex-start;
@@ -432,28 +427,28 @@ main {
 }
 
 .teacher-full-info .subject {
-    color: var(--mauve);
+    color: var(--muted-dark);
     font-size: 0.88rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0.8rem;
     letter-spacing: 0.02em;
 }
 
 .teacher-full-info p {
-    color: var(--mauve-dark);
+    color: var(--muted-dark);
     font-size: 0.95rem;
     margin-bottom: 0.4rem;
 }
 
 /* ---------- CTA-БЛОК ---------- */
 .cta-block {
-    background: var(--mauve);
+    background: var(--ink);
     color: var(--paper);
     padding: 3rem 2rem;
     margin-top: 2rem;
     text-align: left;
     position: relative;
-    border-left: 6px solid var(--pink);
+    border-left: 6px solid var(--gold);
 }
 
 .cta-block h2 {
@@ -465,19 +460,19 @@ main {
 
 .cta-block h2 em {
     font-style: italic;
-    color: var(--pink-light);
+    color: var(--gold);
 }
 
 .cta-block p {
-    color: rgba(255, 250, 247, 0.82);
+    color: rgba(237, 235, 215, 0.8);
     margin-bottom: 1.8rem;
     max-width: 540px;
     font-size: 1rem;
 }
 
 .cta-block .btn-primary {
-    background: var(--pink-light);
-    border-color: var(--pink-light);
+    background: var(--gold);
+    border-color: var(--gold);
     color: var(--ink);
 }
 .cta-block .btn-primary:hover {
@@ -496,8 +491,8 @@ main {
 
 .contact-info,
 .contact-form {
-    background: var(--paper);
-    border: 1px solid rgba(157, 129, 137, 0.25);
+    background: var(--paper-light);
+    border: 1px solid rgba(110, 103, 95, 0.25);
     padding: 1.8rem;
 }
 
@@ -512,7 +507,7 @@ main {
     gap: 0.9rem;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px dashed rgba(157, 129, 137, 0.25);
+    border-bottom: 1px dashed rgba(110, 103, 95, 0.3);
     align-items: flex-start;
 }
 
@@ -526,7 +521,7 @@ main {
     font-size: 1.1rem;
     flex-shrink: 0;
     width: 1.5rem;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .contact-info-item strong {
@@ -534,7 +529,7 @@ main {
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--mauve);
+    color: var(--muted-dark);
     font-weight: 600;
     margin-bottom: 2px;
 }
@@ -557,7 +552,7 @@ main {
     margin-bottom: 0.35rem;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--mauve-dark);
+    color: var(--muted-dark);
 }
 
 .form-group input,
@@ -565,7 +560,7 @@ main {
 .form-group select {
     width: 100%;
     padding: 0.7rem 0.85rem;
-    border: 1px solid rgba(157, 129, 137, 0.4);
+    border: 1px solid rgba(110, 103, 95, 0.4);
     background: #fff;
     font-size: 0.95rem;
     font-family: inherit;
@@ -578,7 +573,7 @@ main {
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: var(--mauve);
+    border-color: var(--gold);
 }
 
 .form-group textarea {
@@ -596,7 +591,7 @@ main {
 /* ---------- ПОДВАЛ ---------- */
 footer {
     background: var(--ink);
-    color: rgba(216, 226, 220, 0.8);
+    color: rgba(237, 235, 215, 0.8);
     padding: 2.5rem 2rem 1.5rem;
     margin-top: auto;
 }
@@ -620,7 +615,7 @@ footer {
 }
 
 .footer-logo span {
-    color: var(--pink-light);
+    color: var(--gold);
     font-style: italic;
 }
 
@@ -632,20 +627,20 @@ footer {
 }
 
 .footer-contacts a {
-    color: rgba(216, 226, 220, 0.8);
+    color: rgba(237, 235, 215, 0.8);
     text-decoration: none;
 }
 .footer-contacts a:hover {
-    color: var(--pink-light);
+    color: var(--gold);
 }
 
 .copyright {
     max-width: 1180px;
     margin: 2rem auto 0;
     padding-top: 1.2rem;
-    border-top: 1px solid rgba(216, 226, 220, 0.15);
+    border-top: 1px solid rgba(237, 235, 215, 0.15);
     font-size: 0.8rem;
-    color: rgba(216, 226, 220, 0.55);
+    color: rgba(237, 235, 215, 0.55);
 }
 
 /* ---------- TOAST ---------- */
@@ -663,7 +658,7 @@ footer {
     transform: translateY(10px);
     transition: 0.25s;
     pointer-events: none;
-    border-left: 3px solid var(--pink);
+    border-left: 3px solid var(--gold);
     max-width: 320px;
 }
 
@@ -679,8 +674,10 @@ footer {
         gap: 2rem;
     }
     .hero-image {
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 4 / 5;
         transform: none;
+        max-width: 400px;
+        margin: 0 auto;
     }
     .contact-layout {
         grid-template-columns: 1fr;
