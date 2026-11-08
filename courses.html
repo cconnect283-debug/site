@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы — ЛингваШкола</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="courses">
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo"><i>🌍</i> Лингва<span>Школа</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="courses.html" class="active">Курсы</a></li>
+                    <li><a href="teachers.html">Преподаватели</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">Войти</button>
+                <button class="btn btn-primary" id="signupBtn">Записаться</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumbs"><a href="index.html">Главная</a> / Курсы</div>
+        <h1 class="page-title">Наши курсы</h1>
+        <p class="page-subtitle">Выберите язык и уровень — мы подберём программу под ваши цели: от разговорного до международных экзаменов.</p>
+
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-flag">🇬🇧</div>
+                <h3>Английский</h3>
+                <p>От Beginner до Advanced. Подготовка к IELTS, TOEFL, ЕГЭ.</p>
+                <a href="contacts.html" class="btn course-btn" data-course="Английский">Записаться</a>
+            </div>
+            <div class="course-card">
+                <div class="course-flag">🇩🇪</div>
+                <h3>Немецкий</h3>
+                <p>Goethe-Zertifikat, разговорный немецкий, грамматика.</p>
+                <a href="contacts.html" class="btn course-btn" data-course="Немецкий">Записаться</a>
+            </div>
+            <div class="course-card">
+                <div class="course-flag">🇫🇷</div>
+                <h3>Французский</h3>
+                <p>DELF/DALF, фонетика, искусство общения.</p>
+                <a href="contacts.html" class="btn course-btn" data-course="Французский">Записаться</a>
+            </div>
+            <div class="course-card">
+                <div class="course-flag">🇨🇳</div>
+                <h3>Китайский</h3>
+                <p>Иероглифика, HSK 1-6, разговорный с носителем.</p>
+                <a href="contacts.html" class="btn course-btn" data-course="Китайский">Записаться</a>
+            </div>
+            <div class="course-card">
+                <div class="course-flag">🇪🇸</div>
+                <h3>Испанский</h3>
+                <p>DELE, разговорный испанский, латиноамериканский вариант.</p>
+                <a href="contacts.html" class="btn course-btn" data-course="Испанский">Записаться</a>
+            </div>
+            <div class="course-card">
+                <div class="course-flag">🇮🇹</div>
+                <h3>Итальянский</h3>
+                <p>CILS, культура Италии, разговорная практика.</p>
+                <a href="contacts.html" class="btn course-btn" data-course="Итальянский">Записаться</a>
+            </div>
+        </div>
+
+        <section class="cta-block">
+            <h2>Не знаете, <span>какой выбрать?</span></h2>
+            <p>Пройдите бесплатный тест на определение уровня — мы поможем подобрать курс.</p>
+            <a href="contacts.html" class="btn btn-primary">Пройти тест</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">🌍 Лингва<span>Школа</span></div>
+            <div class="footer-contacts">
+                <a href="#">+7 (999) 123-45-67</a>
+                <a href="#">hello@linguaschool.ru</a>
+                <a href="#">Москва, ул. Языковая, 10</a>
+            </div>
+        </div>
+        <div class="copyright">© 2025 ЛингваШкола. Все права защищены.</div>
+    </footer>
+
+    <div id="toast" class="toast-message">Сообщение</div>
+    <script src="js/script.js"></script>
+</body>
+</html>

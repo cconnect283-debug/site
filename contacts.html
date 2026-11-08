@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — ЛингваШкола</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contacts">
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo"><i>🌍</i> Лингва<span>Школа</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="courses.html">Курсы</a></li>
+                    <li><a href="teachers.html">Преподаватели</a></li>
+                    <li><a href="contacts.html" class="active">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">Войти</button>
+                <button class="btn btn-primary" id="signupBtn">Записаться</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumbs"><a href="index.html">Главная</a> / Контакты</div>
+        <h1 class="page-title">Свяжитесь с нами</h1>
+        <p class="page-subtitle">Оставьте заявку — мы перезвоним в течение 15 минут, ответим на вопросы и подберём удобное время для пробного урока.</p>
+
+        <div class="contact-layout">
+            <div class="contact-info">
+                <h3>Наши контакты</h3>
+                <div class="contact-info-item">
+                    <div class="icon">📞</div>
+                    <div>
+                        <strong>Телефон</strong>
+                        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon">✉️</div>
+                    <div>
+                        <strong>Email</strong>
+                        <a href="mailto:hello@linguaschool.ru">hello@linguaschool.ru</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon">📍</div>
+                    <div>
+                        <strong>Адрес</strong>
+                        <span>Москва, ул. Языковая, 10</span>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon">🕐</div>
+                    <div>
+                        <strong>Часы работы</strong>
+                        <span>Пн–Пт: 9:00–21:00, Сб–Вс: 10:00–18:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <h3>Заявка на пробный урок</h3>
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="course">Какой язык интересует?</label>
+                    <select id="course" name="course" required>
+                        <option value="">— Выберите язык —</option>
+                        <option value="english">Английский</option>
+                        <option value="german">Немецкий</option>
+                        <option value="french">Французский</option>
+                        <option value="chinese">Китайский</option>
+                        <option value="spanish">Испанский</option>
+                        <option value="italian">Итальянский</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Комментарий (необязательно)</label>
+                    <textarea id="message" name="message" placeholder="Удобное время занятий, ваш уровень и т. д."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">🌍 Лингва<span>Школа</span></div>
+            <div class="footer-contacts">
+                <a href="#">+7 (999) 123-45-67</a>
+                <a href="#">hello@linguaschool.ru</a>
+                <a href="#">Москва, ул. Языковая, 10</a>
+            </div>
+        </div>
+        <div class="copyright">© 2025 ЛингваШкола. Все права защищены.</div>
+    </footer>
+
+    <div id="toast" class="toast-message">Сообщение</div>
+    <script src="js/script.js"></script>
+</body>
+</html>
